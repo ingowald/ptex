@@ -36,6 +36,12 @@ if (${PRMAN_15_COMPATIBLE_PTEX})
     add_definitions(-DPTEX_NO_LARGE_METADATA_BLOCKS)
 endif ()
 
+# have cmake put all generated libraries and test executables into the
+# build directory rather than into src/ptex/... and src/utils/... etc.
+set(OSPRAY_BINARY_DIR ${PROJECT_BINARY_DIR})
+set(LIBRARY_OUTPUT_PATH ${OSPRAY_BINARY_DIR})
+set(EXECUTABLE_OUTPUT_PATH ${OSPRAY_BINARY_DIR})
+
 include_directories(src/ptex)
 include_directories(${ZLIB_INCLUDE_DIR})
 

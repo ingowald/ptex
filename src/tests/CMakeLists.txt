@@ -12,6 +12,9 @@ target_link_libraries(ftest Ptex_dynamic)
 add_executable(halftest halftest.cpp)
 target_link_libraries(halftest Ptex_dynamic)
 
+add_executable(profile profile.cpp)
+target_link_libraries(profile Ptex_dynamic)
+
 # create a function to add tests that compare output
 # file results
 function(add_compare_test test_name)
