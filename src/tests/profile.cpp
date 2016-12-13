@@ -37,7 +37,7 @@ int main(int argc, char** argv)
   PtexPtr<PtexCache> c(PtexCache::create(0, maxmem));
   
   /*! target profiling time in seconds */
-  double targetProfileTime = 1.f;
+  double targetProfileTime = 5.f;
   /*! the same rate used for the profile look. default from ftest.cpp
       was .125; using lower value means more samples */
   float  samplingRate = .125f;
@@ -71,13 +71,13 @@ int main(int argc, char** argv)
     if (profileCurrentTime >= targetProfileTime) {
       double sps = numSamples / profileCurrentTime;
       if      (sps >= 1e9f)
-        printf("num samples taken per second: %.1fG\n",sps*1e-9f);
+        printf("num samples taken per second: %.2fG\n",sps*1e-9f);
       else if (sps >= 1e6f)
-        printf("num samples taken per second: %.1fM\n",sps*1e-6f);
+        printf("num samples taken per second: %.2fM\n",sps*1e-6f);
       else if (sps >= 1e3f)
-        printf("num samples taken per second: %.1fK\n",sps*1e-3f);
+        printf("num samples taken per second: %.2fK\n",sps*1e-3f);
       else
-        printf("num samples taken per second: %.1f\n",sps*1e-3f);
+        printf("num samples taken per second: %.2f\n",sps*1e-3f);
       break;
     }
   }
