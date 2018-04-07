@@ -37,7 +37,7 @@ int main(int argc, char** argv)
   PtexPtr<PtexCache> c(PtexCache::create(0, maxmem));
   
   /*! target profiling time in seconds */
-  double targetProfileTime = 5.f;
+  double targetProfileTime = 30.f;
   /*! the same rate used for the profile look. default from ftest.cpp
       was .125; using lower value means more samples */
   float  samplingRate = .125f;

@@ -471,11 +471,12 @@ class PtexSeparableKernel {
     typedef void (*ApplyConstFn)(float weight, float* dst, void* data, int nChan);
     static ApplyFn applyFunctions[40];
     static ApplyConstFn applyConstFunctions[20];
-    static inline float accumulate(const float* p, int n)
+
+  static inline float accumulate(const float* p, int n)
     {
-        float result = 0;
-        for (const float* e = p + n; p != e; p++) result += *p;
-        return result;
+      float result = 0;
+      for (const float* e = p + n; p != e; p++) result += *p;
+      return result;
     }
 };
 
